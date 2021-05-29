@@ -1,0 +1,45 @@
+/**
+    Style classes for the DeepLinking Content
+ */
+
+.tool{
+    /*Base container*/
+    width: 100%;
+    float: left;
+}
+.tool_container{
+    width: 100%;
+    float: inherit;
+}
+.content_types_container{
+    width: 50%;
+    float: inherit;
+}
+.content_type_container{
+    float: inherit;
+    border: none;
+    width: 100%;
+}
+
+.content_type_input_group{
+    float: left;
+    width: 80%;
+}
+
+.content_type_name{
+    width: 40%;
+    float: inherit;
+}
+
+.payloads_container{
+    width: 50%;
+    float: inherit;
+}
+
+.payload_viewer{
+    float: inherit;
+}
+
+.json_viewer{
+    text-align: left;
+}
