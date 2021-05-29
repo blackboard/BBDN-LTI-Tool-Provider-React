@@ -1,1 +1,1 @@
-# BBDN-LTI-Tool-React
+# BBDN-LTI-Tool-Provider-React
