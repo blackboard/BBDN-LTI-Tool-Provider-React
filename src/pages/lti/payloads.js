@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import JSONTree from "react-json-tree";
 import toolClient from "../../util/toolClient";
 import {deepLinkingStyles} from "./deepLinkContentStyles";
+import {Trans} from "react-i18next";
 
 /**
  * Universal Payload Viewer
@@ -34,7 +35,7 @@ export function PayloadViewer({token}) {
 
   return (
     <Card>
-      <JsonAccordion json={payload} title={'Launch JWT'}/>
+      <JsonAccordion json={payload} title={'JWT Payload'}/>
     </Card>
   )
 }
@@ -74,7 +75,7 @@ export function JsonAccordion({json, title}) {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant={"link"} eventKey={"0"}>
-            {title}
+            <Trans>{title}</Trans>
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey={"0"} className={"json_viewer"}>

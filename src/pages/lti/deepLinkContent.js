@@ -9,6 +9,8 @@ import {useParams} from "react-router-dom";
 import {MDBContainer} from "mdbreact";
 import toolClient from "../../util/toolClient";
 import {deepLinkingStyles} from "./deepLinkContentStyles";
+import { useTranslation, Trans } from 'react-i18next';
+
 
 /**
  * Deep Linking page
@@ -20,6 +22,7 @@ function DeepLinkContent() {
   const styles = deepLinkingStyles();
   const [items, setItems] = useState([]);
   let {token} = useParams();
+  const { t, i18n } = useTranslation();
 
   const contentTypes = [
     {key: "lti_link", label: "LTI Link"},
@@ -33,13 +36,13 @@ function DeepLinkContent() {
   return (
     <MDBContainer fluid>
       <Card.Title>
-        Universal LTI Tool
+        <Trans>Tool Title</Trans>
       </Card.Title>
       <Card.Body>
         <Card className={styles.toolContainer}>
           <Card className={styles.contentTypesContainer}>
             <Card.Title>
-              LTI Content Types
+              <Trans>LTI Content Types</Trans>
             </Card.Title>
             <Card.Body>
               {contentTypes.map((content_type) => (
@@ -52,7 +55,7 @@ function DeepLinkContent() {
           </Card>
           <Card className={styles.payloadsContainer}>
             <Card.Title>
-              Payloads
+              <Trans>Payloads</Trans>
             </Card.Title>
             {
               (token !== undefined && token !== null) &&
