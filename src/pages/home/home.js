@@ -9,22 +9,22 @@ import {Link} from "react-router-dom";
  * @constructor
  */
 function Home() {
-    const title = "LTI Tool"
-    return (
+  const title = "LTI Tool"
+  return (
 
-        <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <p>
-                {title}
-            </p>
+    <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo"/>
+      <p>
+        {title}
+      </p>
 
-            <Link to="/deepLinkContent">
-                <button variant="outlined">
-                    LTIs
-                </button>
-            </Link>
-        </header>
-    )
+      <Link to="/deepLinkContent">
+        <button variant="outlined">
+          LTIs
+        </button>
+      </Link>
+    </header>
+  )
 }
 
 export default Home;
