@@ -10,11 +10,11 @@ import Home from "./pages/home/home";
  * @constructor
  */
 function App() {
-    return (
-        <div className="App">
-            <Routing/>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Routing/>
+    </div>
+  );
 }
 
 /**
@@ -23,14 +23,14 @@ function App() {
  * @constructor
  */
 const Routing = () => {
-    return (
-        <Switch> {/* The Switch decides which component to show based on the current URL.*/}
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/deepLinkContent/:token'>
-                <DeepLinkContent />
-            </Route>
-        </Switch>
-    );
+  return (
+    <Switch> {/* The Switch decides which component to show based on the current URL.*/}
+      <Route exact path='/' component={Home}/>
+      <Route exact path='/deepLinkContent/:token'>
+        <DeepLinkContent/>
+      </Route>
+    </Switch>
+  );
 }
 
 export default App;
