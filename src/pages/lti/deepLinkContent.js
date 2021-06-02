@@ -164,7 +164,7 @@ function LtiContentType({data, items, setItemsCallback}) {
         <div className={styles.contentTypeInputGroup}>
           <InputGroup className="mb-3">
             <InputGroup.Prepend className={styles.contentTypeName}>
-              <InputGroup.Text>{data.name} </InputGroup.Text>
+              <InputGroup.Text><Trans>{data.name}</Trans> </InputGroup.Text>
             </InputGroup.Prepend>
             <FormControl value={count} onChange={e => {
               const newValue = e.target.value
@@ -244,7 +244,7 @@ function LtiContentRequest({items}) {
   } else if (!isLoaded) {
     return (
       <Button onClick={getLTIContent}>
-        Request
+        <Trans>Request</Trans>
       </Button>
     );
   } else {
@@ -253,10 +253,10 @@ function LtiContentRequest({items}) {
         <Card.Body>
           <JsonAccordion json={items} title={'Items'}/>
           <Button onClick={getLTIContent}>
-            Update
+            <Trans>Update</Trans>
           </Button>
           <Button onClick={doFormPost}>
-            Submit
+            <Trans>Submit</Trans>
           </Button>
         </Card.Body>
       </Card>

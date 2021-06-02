@@ -2,5 +2,14 @@
   "Tool Title": "Universal LTI Tool",
   "LTI Content Types": "LTI Content Types",
   "Payloads": "Payloads",
-  "JWT Payload": "Launch JWT"
+  "JWT Payload": "Launch JWT",
+  "Update": "Update",
+  "Submit": "Submit",
+  "Request": "Request",
+  "LTI Link": "LTI Deep Link",
+  "LTI Embedded Link": "LTI Embedded Link",
+  "LTI Link in a New Window": "LTI Link in a New Window",
+  "LTI Link File": "LTI Link File",
+  "LTI Link HTML": "LTI Link HTML",
+  "LTI Link Image": "LTI Link Image"
 }
