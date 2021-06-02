@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import {Accordion, Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import JSONTree from "react-json-tree";
-import './deepLinkContent.css'
 import toolClient from "../../util/toolClient";
+import {deepLinkingStyles} from "./deepLinkContentStyles";
 
 /**
  * Universal Payload Viewer
@@ -47,6 +47,7 @@ export function PayloadViewer({token}) {
  * @constructor
  */
 export function JsonAccordion({json, title}) {
+    const styles = deepLinkingStyles();
     const theme = {
         scheme: 'monokai',
         author: 'wimer hazenberg (http://www.monokai.nl)',
@@ -69,7 +70,7 @@ export function JsonAccordion({json, title}) {
     };
 
     return (
-        <Accordion defaultActiveKey={"1"} className={"payload_viewer"}>
+        <Accordion defaultActiveKey={"1"} className={styles.payloadViewer}>
             <Card>
                 <Card.Header>
                     <Accordion.Toggle as={Button} variant={"link"} eventKey={"0"}>

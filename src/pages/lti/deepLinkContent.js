@@ -3,12 +3,12 @@ import React, {useState} from "react";
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Plus, ShieldMinus} from "react-bootstrap-icons";
-import './deepLinkContent.css'
 import {Card, FormControl, InputGroup} from "react-bootstrap";
 import {JsonAccordion, PayloadViewer} from "./payloads";
 import {useParams} from "react-router-dom";
 import {MDBContainer} from "mdbreact";
 import toolClient from "../../util/toolClient";
+import {deepLinkingStyles} from "./deepLinkContentStyles";
 
 /**
  * Deep Linking page
@@ -17,6 +17,7 @@ import toolClient from "../../util/toolClient";
  */
 function DeepLinkContent() {
 
+    const styles = deepLinkingStyles();
     const [items, setItems] = useState([]);
     let {token} = useParams();
 
@@ -35,8 +36,8 @@ function DeepLinkContent() {
                 Universal LTI Tool
             </Card.Title>
             <Card.Body>
-                <Card className={"tool_container"}>
-                    <Card className="content_types_container">
+                <Card className={styles.toolContainer}>
+                    <Card className={styles.contentTypesContainer}>
                         <Card.Title>
                             LTI Content Types
                         </Card.Title>
@@ -49,7 +50,7 @@ function DeepLinkContent() {
                             ))}
                         </Card.Body>
                     </Card>
-                    <Card className={"payloads_container"}>
+                    <Card className={styles.payloadsContainer}>
                         <Card.Title>
                             Payloads
                         </Card.Title>
@@ -77,6 +78,7 @@ function DeepLinkContent() {
  */
 function LtiContentType({data, items, setItemsCallback}) {
 
+    const styles = deepLinkingStyles();
     const [count, setCount] = useState(0);
 
     function increment(key, items) {
@@ -154,11 +156,11 @@ function LtiContentType({data, items, setItemsCallback}) {
     }
 
     return (
-        <Card className="content_type_container">
+        <Card className={styles.contentTypeContainer}>
             <Card.Body>
-                <div className="content_type_input_group">
+                <div className={styles.contentTypeInputGroup}>
                     <InputGroup className="mb-3">
-                        <InputGroup.Prepend className="content_type_name">
+                        <InputGroup.Prepend className={styles.contentTypeName}>
                             <InputGroup.Text>{data.name} </InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl value={count} onChange={e => {
