@@ -30,7 +30,7 @@ export const deepLinkingStyles = createUseStyles({
   },
 
   payloadsContainer: {
-    width: '40%',
+    width: '50%',
     float: 'inherit'
   },
 
