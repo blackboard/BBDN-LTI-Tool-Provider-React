@@ -1,5 +1,3 @@
 {
-  "lti_backend": "http://localhost:5555",
-  "redis_host": "localhost",
-  "redis_port": 6379
+  "lti_backend": "http://localhost:5000"
 }
