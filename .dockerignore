@@ -1,0 +1,13 @@
+.env
+
+/node_modules
+
+#Ignoring git and cache folders
+.git
+.cache
+
+.gitignore
+
+#Ignoring all the markdown and class files
+*.md
+
