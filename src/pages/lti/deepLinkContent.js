@@ -235,6 +235,16 @@ function LtiContentRequest({items, token}) {
   }
 
   async function doFormPost() {
+    // The LTI Deep Linking spec requires a form POST back to the Platform
+    const form = document.createElement('form');
+    form.setAttribute('action', content.return_url);
+    form.setAttribute('method', 'POST');
+    const jwtParam = document.createElement('input');
+    jwtParam.setAttribute('name', 'JWT')
+    jwtParam.setAttribute('value', content.signed_jwt);
+    form.appendChild(jwtParam);
+    document.body.appendChild(form);
+    form.submit();
 
   }
 
