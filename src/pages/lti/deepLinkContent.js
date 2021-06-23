@@ -23,6 +23,7 @@ function DeepLinkContent() {
   const [items, setItems] = useState([]);
   let {token} = useParams();
   const { t, i18n } = useTranslation();
+  console.log(`DeepLinkContent token ${token}`);
 
   const contentTypes = [
     {key: "lti_link", label: "LTI Link"},
@@ -63,7 +64,7 @@ function DeepLinkContent() {
             }
           </Card>
         </Card>
-        <LtiContentRequest items={items}/>
+        <LtiContentRequest items={items} token={token}/>
       </Card.Body>
 
     </MDBContainer>
@@ -189,7 +190,6 @@ function LtiContentType({data, items, setItemsCallback}) {
           <ShieldMinus/>
         </Button>
 
-
         <Button variant="success" onClick={() => {
           setCount(count + 1)
           increment(data.key, items)
@@ -208,10 +208,10 @@ function LtiContentType({data, items, setItemsCallback}) {
  * @returns {JSX.Element}
  * @constructor
  */
-function LtiContentRequest({items}) {
+function LtiContentRequest({items, token}) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [response, setResponse] = useState(null)
+  const [content, setContent] = useState(null)
 
   /**
    *
@@ -219,11 +219,10 @@ function LtiContentRequest({items}) {
    */
   async function getLTIContent() {
 
-    toolClient.getLTIContent(items).then()
-      .then(
-        (result) => {
+    toolClient.getLTIContent(items, token).then(result => result.json())
+      .then(content => {
           setIsLoaded(true);
-          setResponse(result)
+          setContent(content)
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -251,7 +250,7 @@ function LtiContentRequest({items}) {
     return (
       <Card>
         <Card.Body>
-          <JsonAccordion json={items} title={'Items'}/>
+          <JsonAccordion json={content} title={'Return Content Items'}/>
           <Button onClick={getLTIContent}>
             <Trans>Update</Trans>
           </Button>

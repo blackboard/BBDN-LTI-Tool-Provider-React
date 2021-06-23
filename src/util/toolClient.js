@@ -46,12 +46,13 @@ class ToolClient extends Client {
    * Method to obtain the payload for the LTI Content items
    * @param items array of items to obtain the payload from backend
    */
-  async getLTIContent(items) {
+  async getLTIContent(items, token) {
     const requestOptions = {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        deep_link_content: items
+        deep_link_content: items,
+        token: token
       })
     };
 
